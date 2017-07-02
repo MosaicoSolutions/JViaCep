@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import br.com.mosaicosolutions.jviacep.modelos.Cep;
+import br.com.mosaicosolutions.jviacep.modelos.CepInvalidoException;
 
 public class CepTest {
 
@@ -29,12 +30,12 @@ public class CepTest {
     }
 
     @Test
-    @DisplayName("RuntimeException deve ser lançada")
+    @DisplayName("CepInvalidoException deve ser lançada")
     public void deveLancarException() {
 
-        assertThrows(RuntimeException.class, () -> Cep.of("123"));//Cep com menos de 8 caracteres.
-        assertThrows(RuntimeException.class, () -> Cep.of("123456789"));//Cep com mais de 8 caracteres.
-        assertThrows(RuntimeException.class, () -> Cep.of("1234as67"));//Cep com caracteres inválidos.
+        assertThrows(CepInvalidoException.class, () -> Cep.of("123"));//Cep com menos de 8 caracteres.
+        assertThrows(CepInvalidoException.class, () -> Cep.of("123456789"));//Cep com mais de 8 caracteres.
+        assertThrows(CepInvalidoException.class, () -> Cep.of("1234as67"));//Cep com caracteres inválidos.
     }
 
     @Test
