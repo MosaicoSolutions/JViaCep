@@ -13,12 +13,19 @@ public final class EnderecoRequisicao implements Serializable {
 
     private static final int qtdCaracteres = 3;
 
-    private UF estado;
+    private UF uf;
     private String cidade;
     private String logradouro;
 
+
+    public EnderecoRequisicao(){
+        this.cidade = "";
+        this.logradouro = "";
+    }
+
+
     public EnderecoRequisicao(UF estado, String cidade, String logradouro){
-        this.estado = estado;
+        this.uf = estado;
         this.cidade = cidade;
         this.logradouro = logradouro;
     }
@@ -27,14 +34,24 @@ public final class EnderecoRequisicao implements Serializable {
 
     public String getLogradouro() { return logradouro; }
 
-    public boolean isValido() {
-        return false;
-    }
+    public void setUf(UF uf) { this.uf = uf; }
+
+    public void setCidade(String cidade) { this.cidade = cidade; }
+
+    public void setLogradouro(String logradouro) { this.logradouro = logradouro; }
+
+    /**
+     * Meotodo que ferifica se as premissas da busca por endereço são validas.
+     *
+     * @return true, se cidade e logradouro não forem nulos e conterem pelo menos 3 caracteres e uf for diferente de nulo.
+     *
+     */
+    public boolean isValido() { return isCidadeValida() && isLogradouroValida() && this.uf != null; }
 
     private boolean isCidadeValida(){ return this.cidade != null && this.cidade.length() >= qtdCaracteres; }
 
     private boolean isLogradouroValida(){ return this.logradouro != null && this.logradouro.length() >= qtdCaracteres; }
 
     @Override
-    public String toString() { return "EnderecoRequisicao {" + "UF=" + estado.getSigla() + ", cidade='" + cidade + '\'' + ", logradouro='" + logradouro + '\'' + '}'; }
+    public String toString() { return "EnderecoRequisicao {" + "UF=" + uf.getSigla() + ", cidade='" + cidade + '\'' + ", logradouro='" + logradouro + '\'' + '}'; }
 }
