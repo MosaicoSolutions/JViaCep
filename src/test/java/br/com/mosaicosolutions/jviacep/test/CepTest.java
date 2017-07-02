@@ -27,6 +27,7 @@ public class CepTest {
         assertFalse(Cep.isCepValido(""));
         assertFalse(Cep.isCepValido("123456")); //Com menos de 8 caracteres.
         assertFalse(Cep.isCepValido("123123123")); // Com mais de 8 caraceres.
+
     }
 
     @Test
