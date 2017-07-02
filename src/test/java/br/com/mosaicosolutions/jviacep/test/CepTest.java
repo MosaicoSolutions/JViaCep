@@ -2,15 +2,17 @@ package br.com.mosaicosolutions.jviacep.test;
 
 import java.util.function.Predicate;
 
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import br.com.mosaicosolutions.jviacep.modelos.Cep;
-
-import static org.junit.Assert.*;
 
 public class CepTest {
 
     @Test
+    @DisplayName("O Cep deve ser válido")
     public void deveSerValido() {
 
         assertTrue(Cep.isCepValido("01001000"));
@@ -18,6 +20,7 @@ public class CepTest {
     }
 
     @Test
+    @DisplayName("O Cep deve ser inválido")
     public void deveSerInvalido() {
 
         assertFalse(Cep.isCepValido(""));
@@ -25,30 +28,37 @@ public class CepTest {
         assertFalse(Cep.isCepValido("123123123")); // Com mais de 8 caraceres.
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
+    @DisplayName("RuntimeException deve ser lançada")
     public void deveLancarException() {
 
-        Cep.of("123");
+        assertThrows(RuntimeException.class, () -> Cep.of("123"));//Cep com menos de 8 caracteres.
+        assertThrows(RuntimeException.class, () -> Cep.of("123456789"));//Cep com mais de 8 caracteres.
+        assertThrows(RuntimeException.class, () -> Cep.of("1234as67"));//Cep com caracteres inválidos.
     }
 
     @Test
+    @DisplayName("O Cep deve estar formatado")
     public void testaSeOCepEstaFormatado() {
         Cep cep = Cep.of("01001000");
 
         assertTrue(cep.getCepFormatado().contains("-"));
+        assertEquals(cep.getCepFormatado(), "01001-000");
     }
 
     @Test
+    @DisplayName("Os Cep's devem ser iguais")
     public void devemSerIguais() {
         Cep cep1 = Cep.of("01001000");
         Cep cep2 = Cep.of("01001-000");
 
         assertEquals(cep1, cep2);
         assertEquals(cep1.get(), cep2.get());
-        assertNotEquals(cep1, null);
+        assertTrue(cep1.equals(cep2));
     }
 
     @Test
+    @DisplayName("Testando a Regex do Cep")
     public void testaARegexDoCep() {
 
         Cep cep = Cep.of("01001000");
