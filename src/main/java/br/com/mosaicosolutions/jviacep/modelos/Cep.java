@@ -24,10 +24,8 @@ public final class Cep implements Serializable, Comparable<Cep> {
     }
 
     private Cep(String cep) {
-        //TODO: Trocar a exception que está sendo lançada para CepInvalidoException.
-        //TODO: Trocar também no método deveLancarException() da classe de Teste Unitário.
         if (!Cep.isCepValido(cep))
-            throw new RuntimeException("O cep não é valido, apenas os seguintes formatos são aceitos: 00000-000 ou 00000000.");
+            throw new CepInvalidoException();
 
         this.cep = cep.matches(CEP_FORMATADO) ? formataCepSomenteNumeros(cep) : cep;
     }
