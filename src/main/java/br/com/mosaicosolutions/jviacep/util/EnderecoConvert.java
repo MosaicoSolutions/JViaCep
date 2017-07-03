@@ -1,6 +1,9 @@
 package br.com.mosaicosolutions.jviacep.util;
 
+import br.com.mosaicosolutions.jviacep.modelos.Endereco;
+
 import java.util.Optional;
+import java.util.stream.Stream;
 
 /**
  * Fornece métodos para conversões entre Json e Endereço.
@@ -10,7 +13,7 @@ import java.util.Optional;
  */
 public interface EnderecoConvert {
 
-    //Optional<Endereco> deJsonParaEndereco(String json);
+    Optional<Endereco> deJsonParaEndereco(String json);
 
-    //Stream<Endereco> deJsonParaListaDeEndereco(String json);
+    Stream<Endereco> deJsonParaListaDeEndereco(String json);
 }
