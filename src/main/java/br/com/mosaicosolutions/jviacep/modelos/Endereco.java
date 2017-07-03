@@ -18,9 +18,9 @@ public final class Endereco implements Serializable {
     private String complemento;
     private String bairro;
     private String localidade;
-    private String UF;
+    private String uf;
     private String unidade;
-    private String IBGE;
+    private String ibge;
     private String gia;
 
 
@@ -30,21 +30,21 @@ public final class Endereco implements Serializable {
         this.complemento = "";
         this.bairro = "";
         this.localidade = "";
-        this.UF = "";
+        this.uf = "";
         this.unidade = "";
-        this.IBGE = "";
+        this.ibge = "";
         this.gia = "";
     }
 
-    public Endereco(String cep, String logradouro, String complemento, String bairro, String localidade, String UF, String unidade, String IBGE, String gia){
+    public Endereco(String cep, String logradouro, String complemento, String bairro, String localidade, String uf, String unidade, String ibge, String gia){
         this.cep = cep;
         this.logradouro = logradouro;
         this.complemento = complemento;
         this.bairro = bairro;
         this.localidade = localidade;
-        this.UF = UF;
+        this.uf = uf;
         this.unidade = unidade;
-        this.IBGE = IBGE;
+        this.ibge = ibge;
         this.gia = gia;
     }
 
@@ -68,17 +68,17 @@ public final class Endereco implements Serializable {
 
     public void setLocalidade(String localidade) { this.localidade = localidade; }
 
-    public String getUF() { return UF; }
+    public String getUf() { return uf; }
 
-    public void setUF(String UF) { this.UF = UF; }
+    public void setUf(String uf) { this.uf = uf; }
 
     public String getUnidade() { return unidade; }
 
     public void setUnidade(String unidade) { this.unidade = unidade; }
 
-    public String getIBGE() { return IBGE; }
+    public String getIbge() { return ibge; }
 
-    public void setIBGE(String IBGE) { this.IBGE = IBGE; }
+    public void setIbge(String ibge) { this.ibge = ibge; }
 
     public String getGia() { return gia; }
 
