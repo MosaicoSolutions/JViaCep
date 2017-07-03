@@ -2,6 +2,7 @@ package br.com.mosaicosolutions.jviacep.modelos;
 
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
@@ -75,6 +76,8 @@ public enum UF {
         return todos().filter(uf -> uf.nome.equals(nome)).findFirst();
     }
 
-    //public static Stream<UF> onde(Predicate<UF> predicado);
+    public static Stream<UF> onde(Predicate<UF> predicado){
+        return todos().filter(predicado);
+    }
 
 }
