@@ -1,4 +1,4 @@
-package br.com.mosaicosolutions.jviacep.test;
+package br.com.mosaicosolutions.jviacep.test.modelos;
 
 import br.com.mosaicosolutions.jviacep.modelos.EnderecoRequisicao;
 import br.com.mosaicosolutions.jviacep.modelos.UF;

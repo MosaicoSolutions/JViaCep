@@ -1,4 +1,4 @@
-package br.com.mosaicosolutions.jviacep.test;
+package br.com.mosaicosolutions.jviacep.test.modelos;
 
 import java.util.function.Predicate;
 
