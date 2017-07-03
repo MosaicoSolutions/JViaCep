@@ -30,6 +30,8 @@ public final class EnderecoRequisicao implements Serializable {
         this.logradouro = logradouro;
     }
 
+    public UF getUf() { return uf; }
+
     public String getCidade() { return cidade; }
 
     public String getLogradouro() { return logradouro; }
