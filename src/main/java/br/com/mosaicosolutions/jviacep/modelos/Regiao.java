@@ -25,9 +25,9 @@ public enum Regiao {
         return this.nome;
     }
 
-    //public Stream<UF> getEstados() { return UF.onde(uf -> uf.regiao == this); }
+    public Stream<UF> getEstados() { return UF.onde(uf -> uf.getRegiao() == this); }
 
-    /*public static Function<Regiao, Stream<UF>> getEstadosPorRegiao() {
-        return regiao -> UF.onde(uf -> uf.regiao == regiao);
-    }*/
+    public static Function<Regiao, Stream<UF>> getEstadosPorRegiao() {
+        return regiao -> UF.onde(uf -> uf.getRegiao() == regiao);
+    }
 }
