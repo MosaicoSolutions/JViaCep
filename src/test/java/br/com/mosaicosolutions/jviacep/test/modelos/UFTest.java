@@ -26,18 +26,18 @@ public class UFTest {
     @Test
     @DisplayName("Deve encontrar UF pela sigla")
     public void deveEncontarUFPelaSigla() {
-        UF pernambuco = UF.getPelaSigla("SP").orElseThrow(() -> new NoSuchElementException());
+        UF saoPaulo = UF.getPelaSigla("SP").orElseThrow(() -> new NoSuchElementException());
 
-        assertEquals(pernambuco.getSigla(), "SP");
-        assertEquals(pernambuco.getNome(), "São Paulo");
+        assertEquals(saoPaulo.getSigla(), "SP");
+        assertEquals(saoPaulo.getNome(), "São Paulo");
     }
 
     @Test
     @DisplayName("Deve encontrar UF pelo nome")
     public void deveEncontarUFPeloNome() {
-        UF pernambuco = UF.getPeloNome("Rio de Janeiro").orElseThrow(() -> new NoSuchElementException());
+        UF rioDeJaneiro = UF.getPeloNome("Rio de Janeiro").orElseThrow(() -> new NoSuchElementException());
 
-        assertEquals(pernambuco.getSigla(), "RJ");
-        assertEquals(pernambuco.getCodigo(), 33);
+        assertEquals(rioDeJaneiro.getSigla(), "RJ");
+        assertEquals(rioDeJaneiro.getCodigo(), 33);
     }
 }
