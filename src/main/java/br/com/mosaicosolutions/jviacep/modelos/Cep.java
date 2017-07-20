@@ -50,7 +50,7 @@ public final class Cep implements Serializable, Comparable<Cep> {
      * Retorna a expressão regular para validar o Cep.
      * @return Um {@link #Pattern} contendo a expressão regular.
      */
-    public Pattern getPattern() {
+    public static Pattern getPattern() {
         return Pattern.compile(Cep.CEP_PADRAO);
     }
 

@@ -63,9 +63,7 @@ public class CepTest {
     @DisplayName("Testando a Regex do Cep")
     public void testaARegexDoCep() {
 
-        Cep cep = Cep.of("01001000");
-
-        Predicate<String> predicate = cep.getPattern().asPredicate();
+        Predicate<String> predicate = Cep.getPattern().asPredicate();
 
         assertTrue(predicate.test("01001000"));
         assertTrue(predicate.test("01001-000"));
