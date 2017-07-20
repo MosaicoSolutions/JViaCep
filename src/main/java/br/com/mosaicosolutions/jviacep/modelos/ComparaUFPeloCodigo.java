@@ -50,6 +50,9 @@ public final class ComparaUFPeloCodigo implements Comparator<UF> {
      */
     @Override
     public int compare(UF o1, UF o2) {
-        return o2 == null ? 1 : Integer.compare(o1.getCodigo(), o2.getCodigo());
+        return o1 == o2 ?
+                0 : o1 == null ?
+                    -1 : o2 == null ?
+                        1 : Integer.compare(o1.getCodigo(), o2.getCodigo());
     }
 }

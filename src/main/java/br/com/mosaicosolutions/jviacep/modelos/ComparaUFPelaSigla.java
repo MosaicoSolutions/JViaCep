@@ -50,6 +50,9 @@ public final class ComparaUFPelaSigla implements Comparator<UF> {
      */
     @Override
     public int compare(UF o1, UF o2) {
-        return o2 == null ? 1 : o1.getSigla().compareTo(o2.getSigla());
+        return o1 == o2 ?
+                0 : o1 == null ?
+                    -1 : o2 == null ?
+                        1 : o1.getSigla().compareTo(o2.getSigla());
     }
 }
