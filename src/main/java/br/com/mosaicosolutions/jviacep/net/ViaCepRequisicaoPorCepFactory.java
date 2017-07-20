@@ -6,13 +6,8 @@ import br.com.mosaicosolutions.jviacep.modelos.Cep;
  * @author BrunoXavier
  * @version 1.0
  */
-public interface ViaCepRequisicaoPorCepFactory {
-
-    ViaCepRequisicaoPorCep novaRequisicaoJson(Cep cep);
-
-    ViaCepRequisicaoPorCep novaRequisicaoXml(Cep cep);
-
-    ViaCepRequisicaoPorCep novaRequisicaoPiped(Cep cep);
-
-    ViaCepRequisicaoPorCep novaRequisicaoQuerty(Cep cep);
-}
+public interface ViaCepRequisicaoPorCepFactory extends ViaCepRequisicaoJsonDe<Cep>,
+                                                       ViaCepRequisicaoXmlDe<Cep>,
+                                                       ViaCepRequisicaoPipedDe<Cep>,
+                                                       ViaCepRequisicaoQuertyDe<Cep>
+{ }

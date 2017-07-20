@@ -6,11 +6,9 @@ import br.com.mosaicosolutions.jviacep.modelos.Cep;
  * @author BrunoXavier
  * @version 1.0
  */
-public interface ViaCepRequisicaoPorCep extends ViaCepRequisicao {
-
-    Cep getCep();
+public interface ViaCepRequisicaoPorCep extends ViaCepRequisicaoPor<Cep> {
 
     default String toUri() {
-       return String.format("%s/%s", getCep(), getFormatoRequisicao());
+       return String.format("%s/%s", getDados(), getFormato());
     }
 }

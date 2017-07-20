@@ -6,9 +6,6 @@ import br.com.mosaicosolutions.jviacep.modelos.EnderecoRequisicao;
  * @author BrunoXavier
  * @version 1.0
  */
-public interface ViaCepRequisicaoPorEnderecoFactory {
-
-    ViaCepRequisicaoPorEndereco novaRequisicaoJson(EnderecoRequisicao enderecoRequisicao);
-
-    ViaCepRequisicaoPorEndereco novaRequisicaoXml(EnderecoRequisicao enderecoRequisicao);
-}
+public interface ViaCepRequisicaoPorEnderecoFactory extends ViaCepRequisicaoJsonDe<EnderecoRequisicao>,
+                                                            ViaCepRequisicaoXmlDe<EnderecoRequisicao>
+{ }

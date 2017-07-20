@@ -8,9 +8,9 @@ import br.com.mosaicosolutions.jviacep.modelos.ViaCepFormatoRequisicao;
  * @author BrunoXavier
  * @version 1.0
  */
-public interface ViaCepRequisicao {
+public interface ViaCepRequisicaoPor<T> extends ViaCepUri {
 
-    String toUri();
+    T getDados();
 
-    ViaCepFormatoRequisicao getFormatoRequisicao();
+    ViaCepFormatoRequisicao getFormato();
 }
