@@ -11,7 +11,7 @@ public final class EnderecoRequisicao implements Serializable {
 
     private static final long serialVersionUID = -855640977773704651L;
 
-    private static final int qtdCaracteres = 3;
+    private static final int QTD_CARACTERES = 3;
 
     private UF uf;
     private String cidade;
@@ -50,9 +50,9 @@ public final class EnderecoRequisicao implements Serializable {
      */
     public boolean isValido() { return isCidadeValida() && isLogradouroValida() && this.uf != null; }
 
-    private boolean isCidadeValida(){ return this.cidade != null && this.cidade.length() >= qtdCaracteres; }
+    private boolean isCidadeValida(){ return this.cidade != null && this.cidade.length() >= QTD_CARACTERES; }
 
-    private boolean isLogradouroValida(){ return this.logradouro != null && this.logradouro.length() >= qtdCaracteres; }
+    private boolean isLogradouroValida(){ return this.logradouro != null && this.logradouro.length() >= QTD_CARACTERES; }
 
     @Override
     public String toString() { return "EnderecoRequisicao {" + "UF=" + uf.getSigla() + ", cidade='" + cidade + '\'' + ", logradouro='" + logradouro + '\'' + '}'; }
